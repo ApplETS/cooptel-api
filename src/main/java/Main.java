@@ -28,9 +28,9 @@ public class Main {
                     username,
                     password;
 
-            Date date = new Date();
+            Date today = new Date();
             Calendar cal = Calendar.getInstance();
-            cal.setTime(date);
+            cal.setTime(today);
             int month = cal.get(Calendar.MONTH) + 1;
 
             OkHttpClient client = new OkHttpClient();
@@ -70,7 +70,7 @@ public class Main {
                     if (m.matches()) {
                         consommationDates.add(new ConsommationDate(
                                 m.group(1),
-                                m.group(2).equals("Journée en cours") ? formatter.format(new Date()) : m.group(2),
+                                m.group(2).equals("Journée en cours") ? formatter.format(today) : m.group(2),
                                 Float.parseFloat(m.group(3)),
                                 Float.parseFloat(m.group(4))));
                     }
