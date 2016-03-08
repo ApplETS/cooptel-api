@@ -94,14 +94,6 @@ public class Main {
                     );
             }
 
-
-            System.out.println(
-                    tables.get(1)
-                            .children()
-                            .html()
-                            .replace("\n", "")
-            );
-
             return new Gson().toJson(global);
 
         });
